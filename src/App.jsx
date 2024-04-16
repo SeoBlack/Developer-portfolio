@@ -1,9 +1,12 @@
 import AppLayout from "./sections/AppLayout";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div className="bg-darkBlue">
-      <AppLayout />
+      <BrowserRouter>
+        <AppLayout />
+      </BrowserRouter>
     </div>
   );
 }

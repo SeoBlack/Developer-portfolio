@@ -1,10 +1,11 @@
 import Button from "../components/Button";
 import Container from "../components/Container";
 import { ReactTyped } from "react-typed";
+import { HashLink } from "react-router-hash-link";
 
 export default function Hero() {
   return (
-    <Container>
+    <Container id="hero">
       <div className="flex pt-12  items-center md:flex-row flex-col-reverse">
         <div className="flex flex-col justify-between text-center items-center md:text-left md:w-[40%] md:items-start   ">
           <div className="flex flex-col gap-5">
@@ -13,15 +14,10 @@ export default function Hero() {
               <span className="">Hi, I'm </span>
               <span className=" bg-gradient-to-r from-cyan to-purple bg-clip-text text-transparent">
                 <ReactTyped
-                  strings={[
-                    "Sorin",
-                    "Software Developer",
-                    "Web Designer",
-                    "UI/UX Designer",
-                  ]}
+                  strings={["Sorin a Software Developer"]}
                   typeSpeed={100}
                   backSpeed={40}
-                  loop
+                  startWhenVisible
                 />
               </span>
               .
@@ -33,7 +29,9 @@ export default function Hero() {
             </p>
           </div>
           <Button className="  bg-purple" width="w-[150px]">
-            See My Work
+            <HashLink to="#portfolio" smooth>
+              See My Work
+            </HashLink>
           </Button>
         </div>
         <div className="md:w-[60%]">

@@ -3,6 +3,7 @@ import Button from "./Button";
 import { IoMenu, IoClose } from "react-icons/io5";
 import NavItems from "./NavItems";
 import Logo from "./Logo";
+import { HashLink } from "react-router-hash-link";
 
 export default function NavMenu({ showBackground }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,9 @@ export default function NavMenu({ showBackground }) {
         <Logo />
         <NavItems />
         <Button className="bg-purple" width="w-[100px]">
-          Contact
+          <HashLink to="#contact" smooth>
+            Contact
+          </HashLink>
         </Button>
       </div>
       {/* Mobile menu */}

@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-const TOP_OFFSET = 50;
-
-export function useDetectScroll() {
-  const [showBackground, setShowBackground] = useState(false);
+//detecting a scroll to implement a specific functionality
+export function useDetectScroll(topOffset = 50) {
+  const [isReached, setIsReached] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= TOP_OFFSET) {
-        setShowBackground(true);
+      if (window.scrollY >= topOffset) {
+        setIsReached(true);
       } else {
-        setShowBackground(false);
+        setIsReached(false);
       }
     };
 
@@ -17,7 +16,7 @@ export function useDetectScroll() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [topOffset]);
 
-  return { showBackground };
+  return { isReached };
 }

@@ -17,7 +17,7 @@ export default {
       purple: "#4521BA",
       lightPurple: "#6B47DD",
       white: "#FEFEFC",
-      grey: "rgba(153, 153, 153, 0.58)",
+      grey: "rgba(153, 153, 153, 0.80)",
       gradient: "linear-gradient(#4521BA, #4BB2D0);",
     },
   },

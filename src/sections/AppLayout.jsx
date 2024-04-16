@@ -4,10 +4,11 @@ import Portfolio from "./Portfolio";
 import Services from "./Services";
 import Experience from "./Experience";
 import Contact from "./Contact";
+import GoUpButton from "../components/GoUpButton";
 
 export default function AppLayout() {
   return (
-    <div className="">
+    <div className="relative">
       <Header />
       <Hero />
       <Portfolio />

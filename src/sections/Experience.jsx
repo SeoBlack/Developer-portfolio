@@ -4,7 +4,7 @@ import { experience } from "../data/projects";
 export default function Experience() {
   return (
     <div className="bg-lighterDarkBlue py-16">
-      <Container className="text-center">
+      <Container className="text-center" id="experience">
         <div>
           <h1 className="text-3xl text-white mb-14">Experience</h1>
         </div>

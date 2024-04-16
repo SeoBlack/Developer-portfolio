@@ -7,22 +7,16 @@ import { ReactTyped } from "react-typed";
 
 export default function Contact() {
   return (
-    <Container className="py-16">
+    <Container className="py-16" id="contact">
       <div className="text-center text-white max-w-[550px] mx-auto ">
         <h1 className="text-3xl font-bold md:h-[50px] h-[100px] my-14">
           Let's connect and create{" "}
           <span className="bg-gradient-to-r from-cyan to-purple bg-clip-text text-transparent">
             <ReactTyped
-              strings={[
-                "Something remarkable!",
-                "Something astonishing!",
-                "Something exceptional!",
-                "Something incredible!",
-                "Something outstanding!",
-              ]}
+              strings={["Something remarkable!"]}
               typeSpeed={100}
               backSpeed={40}
-              loop
+              startWhenVisible
             />
           </span>
         </h1>
