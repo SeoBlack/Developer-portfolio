@@ -4,8 +4,27 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaLocationPin } from "react-icons/fa6";
 import { ReactTyped } from "react-typed";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
+const emailjsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const emailjsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
+  console.log(emailjsPublicKey, emailjsServiceId, emailjsTemplateId);
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(emailjsServiceId, emailjsTemplateId, form.current, {
+        publicKey: emailjsPublicKey,
+      })
+      .then(
+        () => alert("Sent Successfully"),
+        (error) => alert("failed to send email")
+      );
+  };
   return (
     <Container className="py-16" id="contact">
       <div className="text-center text-white max-w-[550px] mx-auto ">
@@ -34,7 +53,12 @@ export default function Contact() {
         </div>
         <div className=" flex md:flex-row flex-col md:items-start items-center">
           <div className="md:w-[55%] w-full">
-            <form action="#" className="flex flex-col gap-5">
+            <form
+              action="#"
+              className="flex flex-col gap-5"
+              ref={form}
+              onSubmit={sendEmail}
+            >
               <input
                 type="text"
                 placeholder="Name"
